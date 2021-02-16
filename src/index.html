@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Launch countdown timer</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
 
   <h2>We're launching soon</h2>
@@ -44,16 +56,17 @@
       <h3 class="title">Seconds</h3>
     </div>
   </main>
-  
+
   <div id="social-buttons">
-    <input type="button" class="social-button" aria-label="Share on Fabenook"><img class="social-button" alt="Facebook Share" src="./images/icon-facebook.svg"></input>
-    <input type="button" class="social-button" aria-label="Share on Pintrest"><img class="social-button" alt="Pintrest Share" src="./images/icon-pinterest.svg"></input>
-    <input type="button" class="social-button" aria-label="Share on Instagram"><img class="social-button" alt="Instagram Share" src="./images/icon-instagram.svg"></input>
+    <input type="image" class="social-button" src="./images/icon-facebook.svg" name="facebook-share" aria-label="Share on Facebook">
+    <input type="image" class="social-button" src="./images/icon-pinterest.svg" name="pintrest-share" aria-label="Share on Pintrest">
+    <input type="image" class="social-button" src="./images/icon-instagram.svg" name="instagram-share" aria-label="Share on Instagram">
   </div>
 
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/srikant-n">Srikant Nimmagadda</a>.
   </footer>
 </body>
+
 </html>
