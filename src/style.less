@@ -1,0 +1,183 @@
+#colors() {
+    grayish-blue: hsl(237, 18%, 59%); //Social and time title
+    soft-red: hsl(345, 95%, 68%); //Social hover and time text
+    dark-soft-red: hsl(346, 58%, 57%);
+    heading: hsl(0, 0%, 100%);
+    dark-saturated-blue: hsl(236, 21%, 26%);
+    darker-saturated-blue: hsl(242, 21%, 22%);
+    timer-line: hsl(235, 23%, 21%);
+    // timer-circle: hsl(240, 17%, 12%);
+    timer-circle: hsl(240, 17%, 10%);
+    // Background
+    very-dark-blue: hsl(234, 17%, 12%);
+    very-dark-purple: hsl(266, 21%, 12%);
+}
+
+:root {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // Workaround for error in IDE
+    @bg-top : #colors[very-dark-blue];
+    @bg-bot : #colors[very-dark-purple];
+
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url('../images/bg-stars.svg'), 
+    url(../images/pattern-hills.svg) no-repeat bottom center,
+    linear-gradient(@bg-top 0%,@bg-bot 100%);
+    background-size: 100% auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+h2 {
+    font-family: 'Red Hat Text';
+    color: #colors[heading];
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+}
+
+/* Timer */
+#timer {
+    width: 94%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 50px;
+    
+    h3 {
+        font-size: 14px;
+        color: #colors[grayish-blue];
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        margin-top: 30px;
+    }
+}
+
+.time-block {
+    @block-radius: 10px;
+    @block-width: 180px;
+    @block-height: 90px;
+    @block-circle-length: 5px;
+
+    .number {
+        color: #colors[dark-soft-red];
+        text-align: center;
+        font-size: 5em;
+        align-self: stretch;
+        position: relative;
+    }
+
+    .top-block {
+        width: @block-width;
+        height: @block-height;
+        background-color: #colors[darker-saturated-blue];
+        border-radius: @block-radius @block-radius 0 0;
+        // border-bottom: 1px solid #colors[timer-line];
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    
+        &::before {
+          display: inline-block;
+          align-self: flex-end;
+          width:@block-circle-length;
+          height:@block-circle-length;
+          border-radius: 0 100% 0 0;
+          content: '';
+          background-color: #colors[timer-circle];
+        }
+    
+        &::after {
+            display: inline-block;
+            align-self: flex-end;
+            width:@block-circle-length;
+            height:@block-circle-length;
+            border-radius: 100% 0 0 0;
+            content: '';
+            background-color: #colors[timer-circle];
+        }
+
+        .number {
+            top:41%;
+        }
+    }
+
+    .bottom-block {
+        .top-block();
+        border: none;
+        background-color: #colors[dark-saturated-blue];
+        border-radius: 0 0 @block-radius @block-radius;
+        box-shadow: 0 10px 0 2px #colors[timer-circle];
+
+        &::before {
+            border-radius: 0 0 100% 0;
+            align-self: flex-start;
+        }
+      
+        &::after {
+            border-radius: 0 0 0 100%;
+            align-self: flex-start;
+        }
+
+        .number {
+            top:-59%;
+            color: #colors[soft-red];
+        }
+    }
+}
+
+/* End Timer */
+
+/* Footer */
+/* Social Buttons */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+#social-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.social-button:hover {
+    filter: invert(52%) sepia(77%) saturate(2115%) hue-rotate(311deg) brightness(103%) contrast(97%);
+}
+/* End Social Buttons */
+
+
+.attribution {
+    margin: 20px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(237, 18%, 59%);
+}
+/* End Footer */
