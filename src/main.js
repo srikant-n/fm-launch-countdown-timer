@@ -1,4 +1,5 @@
-import maincss from './style.less';
+import './style.less';
+import './images/bg-stars.svg';
 
 let day = -1;
 let hour = -1;
